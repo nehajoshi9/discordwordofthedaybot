@@ -129,7 +129,7 @@ async def define(ctx, arg):
 	"defines a given word!"
 	url = requests.get(
 	    "https://dictionaryapi.com/api/v3/references/collegiate/json/" + arg +
-	    "?key=5634f315-e542-4179-949b-2cadc112ee8c")
+	    "?key=REPLACE_WITH_YOUR_API_KEY")
 	url_json = url.json()
 	try:
 		ourdef = url_json[0].get("shortdef")
@@ -154,7 +154,7 @@ async def quiz(ctx):
 	for g in range(len(answerchoices)):
 		url = requests.get(
 		    "https://dictionaryapi.com/api/v3/references/collegiate/json/" +
-		    answerchoices[g] + "?key=5634f315-e542-4179-949b-2cadc112ee8c")
+		    answerchoices[g] + "?key=REPLACE_WITH_YOUR_API_KEY")
 		url_json = url.json()
 		ourdef = url_json[0].get("shortdef")
 
@@ -335,7 +335,7 @@ async def challenge(ctx, target:Member, pass_Context=True):
     print(listlabels[listoptions.index(randomlist)])
     randomword = random.choice(randomlist)
     print(randomword)
-    url = requests.get("https://dictionaryapi.com/api/v3/references/collegiate/json/" + randomword + "?key=5634f315-e542-4179-949b-2cadc112ee8c")
+    url = requests.get("https://dictionaryapi.com/api/v3/references/collegiate/json/" + randomword + "?key=REPLACE_WITH_YOUR_API_KEY")
     url_json = url.json()
     ourdef = url_json[0].get("shortdef")
     embed=discord.Embed(title="**Challenge!**", description=f"**Category:** {listlabels[listoptions.index(randomlist)]}", color=0xce0909)
